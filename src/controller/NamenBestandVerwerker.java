@@ -50,4 +50,16 @@ public class NamenBestandVerwerker {
 
         return namen;
     }
+
+    public static void voegNaamToeAanGesorteerdeLijst (String naam, ArrayList<String> lijst) {
+        int index = 0;
+        //System.out.printf("Start finding compareTo for %s\n", naam);
+        while (index < lijst.size() && lijst.get(index).compareTo(naam) <= 0) {
+            //System.out.printf("\tNaam = %s. Index : %d. .compareTo = %d\n",
+            //        lijst.get(index).toString(), index, lijst.get(index).compareTo(naam));
+            index++;
+        }
+        //System.out.printf("Done finding compareTo for %s\n\n\n", naam);
+        lijst.add(index, naam);
+    }
 }

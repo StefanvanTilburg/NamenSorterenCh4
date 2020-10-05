@@ -19,6 +19,10 @@ public class NamenSorterenLauncher {
                 NamenBestandVerwerker.telNamenBestand(bestandspad));
 
         ArrayList<String> namenUitBestand = NamenBestandVerwerker.leesNamenBestand(bestandspad);
+        NamenBestandVerwerker.voegNaamToeAanGesorteerdeLijst("Stefan", namenUitBestand);
+        NamenBestandVerwerker.voegNaamToeAanGesorteerdeLijst("Anja", namenUitBestand);
+        NamenBestandVerwerker.voegNaamToeAanGesorteerdeLijst("Zedrick", namenUitBestand);
+        NamenBestandVerwerker.voegNaamToeAanGesorteerdeLijst("Vincent", namenUitBestand);
         for (String naam : namenUitBestand) {
             System.out.println(naam);
         }
