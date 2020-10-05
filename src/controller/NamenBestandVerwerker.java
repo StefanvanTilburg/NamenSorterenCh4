@@ -62,4 +62,10 @@ public class NamenBestandVerwerker {
         //System.out.printf("Done finding compareTo for %s\n\n\n", naam);
         lijst.add(index, naam);
     }
+
+    public static void voegLijstToeAanGesorteerdeLijst (ArrayList<String> nieuweLijst, ArrayList<String> oudeLijst) {
+        for (String naam : nieuweLijst) {
+            voegNaamToeAanGesorteerdeLijst(naam, oudeLijst);
+        }
+    }
 }

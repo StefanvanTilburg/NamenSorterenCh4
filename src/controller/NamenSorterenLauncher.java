@@ -14,15 +14,14 @@ public class NamenSorterenLauncher {
     public static void main(String[] args) {
 
         String bestandspad = "resources/9.2 GesorteerdeNamenOrigineel.txt";
+        String extrabestandspad = "resources/9.2 ExtraNamen.txt";
 
         System.out.printf("Aantal namen in bestand : %d\n",
                 NamenBestandVerwerker.telNamenBestand(bestandspad));
 
         ArrayList<String> namenUitBestand = NamenBestandVerwerker.leesNamenBestand(bestandspad);
-        NamenBestandVerwerker.voegNaamToeAanGesorteerdeLijst("Stefan", namenUitBestand);
-        NamenBestandVerwerker.voegNaamToeAanGesorteerdeLijst("Anja", namenUitBestand);
-        NamenBestandVerwerker.voegNaamToeAanGesorteerdeLijst("Zedrick", namenUitBestand);
-        NamenBestandVerwerker.voegNaamToeAanGesorteerdeLijst("Vincent", namenUitBestand);
+        ArrayList<String> extraNamenUitBestand = NamenBestandVerwerker.leesNamenBestand(extrabestandspad);
+        NamenBestandVerwerker.voegLijstToeAanGesorteerdeLijst(extraNamenUitBestand, namenUitBestand);
         for (String naam : namenUitBestand) {
             System.out.println(naam);
         }
