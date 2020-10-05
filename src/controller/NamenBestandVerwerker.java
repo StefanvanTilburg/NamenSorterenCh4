@@ -2,6 +2,7 @@ package controller;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -29,5 +30,24 @@ public class NamenBestandVerwerker {
         }
 
         return countLines;
+    }
+
+    public static ArrayList<String> leesNamenBestand(String bestandsnaam) {
+        File bestand = new File(bestandsnaam);
+        ArrayList<String> namen = new ArrayList<>();
+
+        try {
+            Scanner bestandInput = new Scanner(bestand);
+
+            while (bestandInput.hasNextLine()) {
+                namen.add(bestandInput.next());
+            }
+
+            bestandInput.close();
+        } catch (FileNotFoundException exception) {
+            exception.printStackTrace();
+        }
+
+        return namen;
     }
 }

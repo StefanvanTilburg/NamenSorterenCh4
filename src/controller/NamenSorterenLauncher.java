@@ -1,6 +1,8 @@
 package controller;
 
 
+import java.util.ArrayList;
+
 /**
  * @author Stefan van Tilburg
  * <p>
@@ -11,7 +13,14 @@ package controller;
 public class NamenSorterenLauncher {
     public static void main(String[] args) {
 
-        System.out.printf("Aantal namen in bestand : %d",
-                NamenBestandVerwerker.telNamenBestand("resources/9.2 GesorteerdeNamenOrigineel.txt"));
+        String bestandspad = "resources/9.2 GesorteerdeNamenOrigineel.txt";
+
+        System.out.printf("Aantal namen in bestand : %d\n",
+                NamenBestandVerwerker.telNamenBestand(bestandspad));
+
+        ArrayList<String> namenUitBestand = NamenBestandVerwerker.leesNamenBestand(bestandspad);
+        for (String naam : namenUitBestand) {
+            System.out.println(naam);
+        }
     }
 }
