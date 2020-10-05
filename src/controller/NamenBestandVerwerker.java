@@ -2,6 +2,8 @@ package controller;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -66,6 +68,22 @@ public class NamenBestandVerwerker {
     public static void voegLijstToeAanGesorteerdeLijst (ArrayList<String> nieuweLijst, ArrayList<String> oudeLijst) {
         for (String naam : nieuweLijst) {
             voegNaamToeAanGesorteerdeLijst(naam, oudeLijst);
+        }
+    }
+
+    public static void maakBestandvanLijst(ArrayList<String> lijst, String bestandsnaam) {
+        File bestand = new File(bestandsnaam);
+
+        try {
+            PrintWriter printWriter = new PrintWriter(bestand);
+
+            for (String naam : lijst) {
+                printWriter.println(naam);
+            }
+
+            printWriter.close();
+        } catch (IOException exception) {
+            System.out.println("Kan het bestand niet wegschrijven.");
         }
     }
 }

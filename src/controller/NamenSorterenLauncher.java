@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public class NamenSorterenLauncher {
     public static void main(String[] args) {
-
+        // TODO moet NamenBestandVerwerker nu abstract worden?
         String bestandspad = "resources/9.2 GesorteerdeNamenOrigineel.txt";
         String extrabestandspad = "resources/9.2 ExtraNamen.txt";
 
@@ -25,5 +25,8 @@ public class NamenSorterenLauncher {
         for (String naam : namenUitBestand) {
             System.out.println(naam);
         }
+
+        NamenBestandVerwerker.maakBestandvanLijst(namenUitBestand,
+                "resources/9.2 GesoorteerdeNamenNieuw.txt");
     }
 }
